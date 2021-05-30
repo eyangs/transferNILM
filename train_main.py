@@ -52,14 +52,13 @@ if __name__ == '__main__':
     exp_dic = {
         'REDD': {'exp_dir':'experiments/exp210304/REDD/', 'data_dir':'experiments/exp210304/data/REDD/', 'crop':None}, #'crop':'300000'
         # 'UKDALE':{'exp_dir':'experiments/exp210304/UKDALE/', 'data_dir':'experiments/exp210304/data/UKDALE/', 'crop':None}, #crop:737344
-        # 'REFIT':{'exp_dir':'experiments/exp210304/REFIT/','data_dir':'experiments/exp210304/data/REFIT/', 'crop':'18000000'} #所有设备中训练集crop：最小18M,最大40M
-        # 'REFIT':{'exp_dir':'experiments/exp210304/REFIT/','data_dir':'experiments/exp210304/data/REFIT/', 'crop':None} #所有设备中训练集crop：最小18M,最大40M
+        # 'REFIT':{'exp_dir':'experiments/exp210304/REFIT/','data_dir':'experiments/exp210304/data/REFIT/', 'crop':'18000000'} #crop：18M-40M
     }
-    # data_dir = 'data/UKDALE12/'
     appliances = ['microwave','fridge','dishwasher','washingmachine']
-    # appliances = ['fridge']
     for key in exp_dic:
         for appName in appliances:
-            # main(appName,exp_dic[key]['exp_dir'],exp_dic[key]['data_dir'], exp_dic[key]['crop'])                    
+            # 1.train model
+            # main(appName,exp_dic[key]['exp_dir'],exp_dic[key]['data_dir'], exp_dic[key]['crop'])   
+            # 2.fine-tuning model                 
             main(appName,exp_dic[key]['exp_dir'],exp_dic[key]['data_dir'], exp_dic[key]['crop'], isTransfer=True, preTrained_model_dir='experiments/exp210304/REFIT/')                    
 
