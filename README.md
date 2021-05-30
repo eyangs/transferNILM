@@ -3,7 +3,9 @@ the code for the paper "Nonintrusive Residential Electricity Load Decomposition 
 
 redd, ukdale, refit dataset should be download to data path.
 The scripts for data pre-processing are in the data_management folder
+
 model is defined in model_structure.py
+
 steps for experiment:
 - 1. prepare dataset for training and testing.
 - 2. train or fine-tuning model by running the script file: train_main.py
